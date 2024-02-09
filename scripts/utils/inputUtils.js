@@ -7,11 +7,11 @@ export default function handleInput(inputSelector) {
   const inputs = document.querySelectorAll(inputSelector);
 
   inputs.forEach(function (input) {
-    input.addEventListener("input", function () {
-      if (input.value.trim() !== "") {
-        input.classList.add("has-text");
+    input.addEventListener('input', function () {
+      if (input.value.trim() !== '') {
+        input.classList.add('has-text');
       } else {
-        input.classList.remove("has-text");
+        input.classList.remove('has-text');
       }
     });
   });

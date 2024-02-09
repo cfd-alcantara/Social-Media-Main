@@ -1,4 +1,4 @@
-import handleInput from '/scripts/utils/inputUtils.js';
+import handleInput from './utils/inputUtils.js';
 /*
  * Validates the form matched by the provided selector. 
  * Loops through all validation rules defined in validationOptions, 
