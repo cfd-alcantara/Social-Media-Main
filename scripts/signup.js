@@ -79,7 +79,13 @@ const validateForm = formSelector => {
    */
   formElement.setAttribute('novalidate', '');
 
-  /*
+  Array.from(formElement.elements).forEach(element => {
+    element.addEventListener('blur', event => {
+      validateSingleFormGroup(event.srcElement.parentElement.parentElement)
+    });
+  });
+
+   /*
    * Validates all form groups in a form.
    * 
    * Loops through all the form groups in the provided form 
@@ -87,31 +93,21 @@ const validateForm = formSelector => {
    * 
    * Returns true if all form groups are valid, false otherwise.
    */
-  Array.from(formElement.elements).forEach(element => {
-    element.addEventListener('blur', event => {
-      validateSingleFormGroup(event.srcElement.parentElement.parentElement)
-    });
-  });
-
-  formElement.addEventListener('submit', event => {
-    event.preventDefault();
-    if (validateAllFormGroups(formElement)) {
-      console.log('success');
-      window.location.href = 'home.html';
-    }
-  });
-
   const validateAllFormGroups = formToValidate => {
     const formGroups = Array.from(formToValidate.querySelectorAll('.JS-formGroup'));
 
-    let allValid = true;
-    formGroups.forEach(formGroup => {
-      if (!validateSingleFormGroup(formGroup)) {
-        allValid = false;
-      }
-    });
-    return allValid;
-  }
+    return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
+  };
+
+  formElement.addEventListener('submit', event => {
+    const formValid = validateAllFormGroups(formElement);
+
+    if (!formValid) {
+      event.preventDefault();
+    } else {
+      window.location.href = 'home.html';
+    }
+  });
 };
 
 validateForm('#JS-signupForm');
