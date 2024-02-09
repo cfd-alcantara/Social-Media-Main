@@ -101,7 +101,6 @@ const validateForm = formSelector => {
 
   formElement.addEventListener('submit', event => {
     const formValid = validateAllFormGroups(formElement);
-
     if (!formValid) {
       event.preventDefault();
     } else {
@@ -111,3 +110,5 @@ const validateForm = formSelector => {
 };
 
 validateForm('#JS-signupForm');
+
+
