@@ -63,7 +63,7 @@ input {
 }
 
 .text-field input:focus~.placeholder,
-.text-field input:valid~.placeholder {
+.text-field input.has-text~.placeholder {
   top: 0;
   font-size: small;
   background-color: var(--background);
@@ -97,11 +97,7 @@ input {
   color: var(--error);
 }
 
-.text-field.error input:focus~.placeholder,
-.text-field.error input:invalid~.placeholder {
-  top: 0;
-  font-size: small;
-  background-color: var(--background);
+.text-field.error input:focus~.placeholder {
   color: var(--error);
 }
 
