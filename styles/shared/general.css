@@ -80,6 +80,8 @@ p {
 
 a {
   text-decoration: none;
+  color: var(--link);
+  transition: all 0.2s ease;
 }
 
 li {
@@ -109,8 +111,21 @@ li {
   color: var(--error);
 }
 
+.link-1:hover i {
+  transform: translate(2px ,-3px);
+}
+
+.link-2:hover i {
+  transform: translate(3px);
+}
+
 /* *Components Set-up */
 /* ?Buttons */
+button, input {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 100%;
+}
+
 .btn {
   border: none;
   cursor: pointer;
@@ -136,8 +151,4 @@ li {
 
 .primary-btn:hover {
   transform: translateY(-1px);
-}
-
-.primary-btn:hover i {
-  transform: translate(2px ,-3px);
 }
