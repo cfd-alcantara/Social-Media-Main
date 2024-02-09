@@ -105,7 +105,7 @@ const validateForm = formSelector => {
     if (!formValid) {
       event.preventDefault();
     } else {
-      window.location.href = 'index.html';
+      console.log('success');
     }
   });
 };
