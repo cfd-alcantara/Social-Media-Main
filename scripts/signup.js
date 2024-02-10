@@ -88,10 +88,8 @@ const validateForm = formSelector => {
 
    /*
    * Validates all form groups in a form.
-   * 
    * Loops through all the form groups in the provided form 
    * and validates each one using validateSingleFormGroup().
-   * 
    * Returns true if all form groups are valid, false otherwise.
    */
   const validateAllFormGroups = formToValidate => {

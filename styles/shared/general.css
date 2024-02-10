@@ -152,3 +152,136 @@ button, input {
 .primary-btn:hover {
   transform: translateY(-1px);
 }
+
+/* ?Loader */
+.loader-section {
+  background-color: var(--background);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader-icon-wrapper, 
+.loader-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loader-logo {
+  margin-top: 130px;
+}
+
+.loader-logo p {
+  margin-top: 20px;
+  color: var(--text);
+  font-size: small;
+}
+
+.loader-logo img {
+  width: 200px;
+}
+ 
+
+.loader {
+  transform: scale(2);
+  --duration: 3s;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.loader img {
+  background-size: contain;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  display: block;
+  top: 37px;
+  left: 19px;
+  transform: translate(-18px, -18px);
+  animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.loader svg circle {
+  fill: none;
+  stroke: var(--title);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.loader svg circle {
+  stroke-dasharray: 160 40 160 40;
+  stroke-dashoffset: 80;
+  animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+@keyframes dotRect {
+  25% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(18px, -18px);
+  }
+
+  75% {
+    transform: translate(0, -36px);
+  }
+
+  100% {
+    transform: translate(-18px, -18px);
+  }
+}
+
+@keyframes pathCircle {
+  25% {
+    stroke-dashoffset: 130;
+  }
+
+  50% {
+    stroke-dashoffset: 180;
+  }
+
+  75% {
+    stroke-dashoffset: 230;
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+  }
+}
+
+.loader {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}

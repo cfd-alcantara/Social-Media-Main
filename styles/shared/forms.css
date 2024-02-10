@@ -93,17 +93,25 @@ input {
   border-color: var(--error);
 }
 
+.text-field.error input:focus {
+  border-color: var(--warning);
+}
+
 .text-field.error .placeholder {
   color: var(--error);
 }
 
 .text-field.error input:focus~.placeholder {
-  color: var(--error);
+  color: var(--warning);
 }
 
 .text-field.error .helper {
   color: var(--error);
   animation: errorShake 0.3s ease-in-out;
+}
+
+.text-field.error input:focus~.helper {
+  color: var(--warning);
 }
 
 @keyframes errorShake {
