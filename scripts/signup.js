@@ -1,3 +1,4 @@
+import handleInput from './utils/inputUtils.js';
 /*
  * Validates the form matched by the provided selector. 
  * Loops through all validation rules defined in validationOptions, 
@@ -87,10 +88,8 @@ const validateForm = formSelector => {
 
    /*
    * Validates all form groups in a form.
-   * 
    * Loops through all the form groups in the provided form 
    * and validates each one using validateSingleFormGroup().
-   * 
    * Returns true if all form groups are valid, false otherwise.
    */
   const validateAllFormGroups = formToValidate => {
@@ -110,5 +109,4 @@ const validateForm = formSelector => {
 };
 
 validateForm('#JS-signupForm');
-
-
+handleInput('.text-field input');

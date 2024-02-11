@@ -63,7 +63,7 @@ input {
 }
 
 .text-field input:focus~.placeholder,
-.text-field input:valid~.placeholder {
+.text-field input.has-text~.placeholder {
   top: 0;
   font-size: small;
   background-color: var(--background);
@@ -93,21 +93,25 @@ input {
   border-color: var(--error);
 }
 
+.text-field.error input:focus {
+  border-color: var(--warning);
+}
+
 .text-field.error .placeholder {
   color: var(--error);
 }
 
-.text-field.error input:focus~.placeholder,
-.text-field.error input:invalid~.placeholder {
-  top: 0;
-  font-size: small;
-  background-color: var(--background);
-  color: var(--error);
+.text-field.error input:focus~.placeholder {
+  color: var(--warning);
 }
 
 .text-field.error .helper {
   color: var(--error);
   animation: errorShake 0.3s ease-in-out;
+}
+
+.text-field.error input:focus~.helper {
+  color: var(--warning);
 }
 
 @keyframes errorShake {
